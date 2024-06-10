@@ -1,0 +1,160 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    width: 500px;
+    margin: auto;
+}
+
+#background {
+    background-image: url('./asteroid_bg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#ScoreBoard {
+    width: 300px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+#ScoreBoard h1 {
+    margin: 0;
+}
+
+#lives {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.life {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.life.green {
+    background-color: green;
+}
+
+.life.red {
+    background-color: red;
+}
+button {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      "Liberation Mono", "Courier New", monospace;
+    
+    margin-top:20px;
+    font-size: 17px;
+    padding: 1em 2.7em;
+    font-weight: 500;
+    background: #1f2937;
+    color: white;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.6em;
+    cursor: pointer;
+  }
+  
+  .gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 0.6em;
+    margin-top: -0.25em;
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.3)
+    );
+  }
+  
+  .label {
+    position: relative;
+    top: -1px;
+  }
+  
+  .transition {
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition-duration: 500ms;
+    background-color: rgba(16, 185, 129, 0.6);
+    border-radius: 9999px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  button:hover .transition {
+    width: 14em;
+    height: 14em;
+  }
+  
+  button:active {
+    transform: scale(0.97);
+  }
+  
+#board {
+    width: 80%;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 1); /* Light background color */
+    border: 5px solid #000;
+    position: relative; /* Ensures positioning context for absolutely positioned child */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures child elements do not overflow */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+
+#player {
+    position: absolute;
+    top: 50%; /* Initial y position, vertically centered */
+    left: 0; /* Fixed x position initially at the left edge */
+    width: 25px; 
+    height: 25px; 
+    background-color: red; 
+}
+
+
+/* Add styles for the pellet */
+.pellet {
+    position: absolute;
+    width: 5px; /* Adjust size as needed */
+    height: 5px; /* Adjust size as needed */
+    background-color: red; /* Color of the pellet */
+}
+
+/* Add styles for the asteroid */
+.asteroid {
+    position: absolute;
+    background-image: url('./asteroid.png'); /* Image for the asteroid */
+    background-size: cover;
+    background-position: center;
+    transform: translate(-50%, -50%); /* Center the asteroid */
+    z-index: 1; /* Ensure asteroids are above player */
+}
